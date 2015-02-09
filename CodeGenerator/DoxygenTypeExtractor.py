@@ -1,6 +1,6 @@
 # Authors: Philipp Harzig, Christoph Lassner.
 import re
-from TypeTranslations import _dtype_str_translation
+from TypeTranslations import _dtype_internal_translation
 from helper_classes import InstantiationTypes
 
 class DoxygenTypeExtractor(object):

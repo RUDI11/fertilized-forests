@@ -1,37 +1,44 @@
 # Author: Christoph Lassner.
+# This file contains dictionaries with translations for types in the different
+# supported programming languages.
 
-_dtype_str_translation = { 'int': 'i',
-                           'i': 'i',
-                           'float': 'f',
-                           'f': 'f',
-                           'double': 'd',
-                           'd': 'd',
-                           'ui': 'uint',
-                           'uint': 'uint',
-                           'unsigned int': 'uint',
-                           'ui8': 'uint8',
-                           'uint8': 'uint8',
-                           'uint8_t': 'uint8',
-                           'unsigned char': 'uint8',
-                           'uchar': 'uint8',
-                           'uc': 'uint8',
-                           'char': 'int8',
-                           'c': 'int8',
-                           'int16': 'int16',
-                           'int16_t': 'int16',
-                           'i16': 'int16',
-                           'uint16': 'uint16',
-                           'uint16_t': 'uint16',
-                           'ui16': 'uint16',
-                           'std::vector<float>': 'fv',
-                           'std::vector<double>': 'dv',
-                           'std::pair<float,std::shared_ptr<std::vector<int16_t>>>': 'hp',
-                           'std::vector<std::pair<float,std::shared_ptr<std::vector<int16_t>>>>': 'vhp',
-                           'std::pair<std::shared_ptr<std::vector<float>>,std::shared_ptr<std::vector<float>>>': 'rpf',
-                           'std::vector<std::pair<std::pair<std::shared_ptr<std::vector<float>>,std::shared_ptr<std::vector<float>>>,float>>': 'vprpff',
-                           'std::pair<std::shared_ptr<std::vector<double>>,std::shared_ptr<std::vector<double>>>': 'rpd',
-                           'std::vector<std::pair<std::pair<std::shared_ptr<std::vector<double>>,std::shared_ptr<std::vector<double>>>,float>>': 'vprpfd'  }
+###############################################################################
+# Translation from programming and verbose datatype specifications to the
+# internal shorthand names.
+_dtype_internal_translation = {
+  'int': 'i',
+  'i': 'i',
+  'float': 'f',
+  'f': 'f',
+  'double': 'd',
+  'd': 'd',
+  'ui': 'uint',
+  'uint': 'uint',
+  'unsigned int': 'uint',
+  'ui8': 'uint8',
+  'uint8': 'uint8',
+  'uint8_t': 'uint8',
+  'unsigned char': 'uint8',
+  'uchar': 'uint8',
+  'uc': 'uint8',
+  'char': 'int8',
+  'c': 'int8',
+  'int16': 'int16',
+  'int16_t': 'int16',
+  'i16': 'int16',
+  'uint16': 'uint16',
+  'uint16_t': 'uint16',
+  'ui16': 'uint16',
+  'std::vector<float>': 'fv',
+  'std::vector<double>': 'dv',
+  'std::pair<float,std::shared_ptr<std::vector<int16_t>>>': 'hp',
+  'std::vector<std::pair<float,std::shared_ptr<std::vector<int16_t>>>>': 'vhp',
+  'std::pair<std::shared_ptr<std::vector<float>>,std::shared_ptr<std::vector<float>>>': 'rpf',
+  'std::vector<std::pair<std::pair<std::shared_ptr<std::vector<float>>,std::shared_ptr<std::vector<float>>>,float>>': 'vprpff',
+  'std::pair<std::shared_ptr<std::vector<double>>,std::shared_ptr<std::vector<double>>>': 'rpd',
+  'std::vector<std::pair<std::pair<std::shared_ptr<std::vector<double>>,std::shared_ptr<std::vector<double>>>,float>>': 'vprpfd'  }
 
+###############################################################################
 # Translations from C++ to C types.
 # #include <stdint.h> is required!
 _dtype_c_translation = {'int': 'int',
@@ -48,6 +55,8 @@ _dtype_c_translation = {'int': 'int',
                         'bool': 'int',
                         'std::string': 'char*'}
 
+###############################################################################
+# Matlab conversions.
 # See http://www.mathworks.de/help/matlab/apiref/mxcreatenumericarray.html.
 _matlab_cpp_translation = {"mxDOUBLE_CLASS":"double",
                            "mxSINGLE_CLASS":"float",

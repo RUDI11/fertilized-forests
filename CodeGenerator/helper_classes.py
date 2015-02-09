@@ -1,5 +1,5 @@
 # Authors: Philipp Harzig, Christoph Lassner.
-from TypeTranslations import _dtype_c_translation, _dtype_str_translation,\
+from TypeTranslations import _dtype_c_translation, _dtype_internal_translation,\
   _matlab_cpp_translation, _cpp_matlab_translation
 from collections import namedtuple
 import re
@@ -98,8 +98,8 @@ class FertilizedClass(object):
     def getExclusiveSoilUsageAbbreviation(self):
         translated_parts = []
         for part in self.ExclusiveSoilUsage.Types:
-          if _dtype_str_translation.has_key(part):
-            translated_parts.append(_dtype_str_translation[part])
+          if _dtype_internal_translation.has_key(part):
+            translated_parts.append(_dtype_internal_translation[part])
           else:
             translated_parts.append(part)
         abbr = '_'.join(translated_parts)
@@ -242,7 +242,7 @@ class InstantiationTypes(object):
     """
     def __init__(self, types):
         self.Types = types
-        self.TypesString = "_".join([_dtype_str_translation[type.strip().replace(" ", "").replace("\r","").replace("\n","")] \
+        self.TypesString = "_".join([_dtype_internal_translation[type.strip().replace(" ", "").replace("\r","").replace("\n","")] \
                                       for type in types])
     def __eq__(self, other):
         return self.TypesString == other.TypesString
@@ -876,8 +876,8 @@ class WrappedMethod(object):
     def getExclusiveSoilUsageAbbreviation(self):
         translated_parts = []
         for part in self.ExclusiveSoilUsage.Types:
-          if _dtype_str_translation.has_key(part):
-            translated_parts.append(_dtype_str_translation[part])
+          if _dtype_internal_translation.has_key(part):
+            translated_parts.append(_dtype_internal_translation[part])
           else:
             translated_parts.append(part)
         abbr = '_'.join(translated_parts)

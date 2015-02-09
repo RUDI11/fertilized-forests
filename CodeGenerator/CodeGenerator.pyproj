@@ -27,6 +27,10 @@
     <Compile Include="helper_classes.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="oo_concepts\InstantiationTypes.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="oo_concepts\__init__.py" />
     <Compile Include="ParameterWrapper.py" />
     <Compile Include="ParseHeader.py" />
     <Compile Include="SingleFileParser.py" />
@@ -35,6 +39,7 @@
     <Compile Include="WrappedMethodCreator.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="oo_concepts\" />
     <Folder Include="templates\" />
   </ItemGroup>
   <ItemGroup>

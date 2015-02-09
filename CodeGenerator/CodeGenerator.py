@@ -1,17 +1,17 @@
 # Authors: Philipp Harzig, Christoph Lassner.
-# Load the jinja library's namespace into the current module.
 from __future__ import print_function
-import jinja2
 import os
+from os.path import basename
+import sys
 import shutil
+import glob
 import operator
 import itertools
-import glob
-import sys
 import traceback
-from os.path import basename
+import jinja2
+
 from helper_classes import InstantiationTypes
-from TypeTranslations import _dtype_str_translation
+from TypeTranslations import _dtype_internal_translation
 
 print("Parsing source code...")
 import ParseHeader
@@ -538,7 +538,7 @@ tmpl_soil_transl = {'input_dtype':'inp_str',
 templateVars = { "classes" : matlab_exp_classes,
                  "functions" : matlab_exp_functions,
                  "packages" : packages,
-                 "translations" : _dtype_str_translation,
+                 "translations" : _dtype_internal_translation,
                  "matlab_header_files" : matlab_header_files,
                  "tmpl_soil_transl" : tmpl_soil_transl } 
 
